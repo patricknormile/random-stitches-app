@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "random-stitches-app"
+authors = ["patrick normile"]
+description = "an app to generate random front/back post stitches for custom & unique beanies"
+version = "0.0.1"
+
+
+[tool.poetry.dependencies]
+python = "^3.10.0"
+pytest = "^8.3.2"
+coverage = "^7.6.1"
