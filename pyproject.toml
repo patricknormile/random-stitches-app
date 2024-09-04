@@ -7,7 +7,7 @@ version = "0.0.1"
 
 [tool.poetry.dependencies]
 python = "^3.10.0"
-pytest = "^8.3.2"
-coverage = "^7.6.1"
-tk = "^0.1.0"
-matplotlib = "^3.9.2"
+pytest = "8.3.2"
+coverage = "7.6.1"
+tk = "0.1.0"
+matplotlib = "3.9.2"
