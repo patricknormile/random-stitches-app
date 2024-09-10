@@ -1,7 +1,7 @@
 # Random Stitch Generator
 
-Use this app to decide which stitch to use next while making a front/back post double crochet beanie. That way, each beanie will be unique and random looking.
+Use this app to decide which stitch to use next while making a front/back post double crochet beanie. That way, each beanie will be unique and random looking. Requires `poetry`, `python-tk`, `python3.12`.
 
-To begin, run `source init.sh` on mac
+To begin, run `source init.sh` on mac. This will also launch the app.
 
-Then to use the app, run `python src/app.py`
+To use the app after closing, run `python src/app.py`

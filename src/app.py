@@ -27,13 +27,14 @@ class DirectionApp:
         # List to store last 5 directions
         self.history = [" "*5]*5
         self.counter = 0
+        self.position = 0
         self.y_axis = [0]
 
          # Create a figure and axis
         self.figure, self.axis = plt.subplots(figsize=(6, 4))
-        self.axis.set_title('Counter vs Y-Axis')
+        self.axis.set_title('Random Walk')
         self.axis.set_xlabel('Counter')
-        self.axis.set_ylabel('Y-Axis')
+        self.axis.set_ylabel('Position')
         
         # Add the plot to the window
         self.canvas = FigureCanvasTkAgg(self.figure, master=root)
@@ -52,22 +53,24 @@ class DirectionApp:
         history_text = "Last 5 Directions:\n" + "\n".join(self.history[-5:][::-1])
         self.history_label.config(text=history_text)
 
-        # Update counter label
-        counter_text = f"Counter: {self.counter}"
-        self.counter_label.config(text=counter_text)
-
         # Add direction to history and maintain only last 5 directions
         self.history.append(direction)
         if direction == "Front":
             self.y_axis.append(self.y_axis[-1] + 1)
+            self.position += 1
         else : 
             self.y_axis.append(self.y_axis[-1] - 1)
+            self.position -= 1
+
+        # Update counter label
+        counter_text = f"Counter: {self.counter}; Position: {self.position}"
+        self.counter_label.config(text=counter_text)
 
         # Update the plot
         self.axis.clear()
-        self.axis.set_title('Counter vs Y-Axis')
+        self.axis.set_title('Random Walk')
         self.axis.set_xlabel('Counter')
-        self.axis.set_ylabel('Y-Axis')
+        self.axis.set_ylabel('Position')
         self.axis.plot(range(self.counter+1), self.y_axis)
         self.canvas.draw()
 
